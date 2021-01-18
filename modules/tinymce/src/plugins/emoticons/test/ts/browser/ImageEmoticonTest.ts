@@ -22,7 +22,7 @@ describe('browser.tinymce.plugins.emoticons.ImageEmoticonTest', () => {
     const doc = SugarDocument.getDocument();
 
     TinyUiActions.clickOnToolbar(editor, 'button');
-    await TinyUiActions.pWaitForPopup(editor, 'div[role="dialog"]');
+    await TinyUiActions.pWaitForDialog(editor);
     await FocusTools.pTryOnSelector('Focus should start on input', doc, 'input');
     const input = FocusTools.setActiveValue(doc, 'dog');
     fakeEvent(input, 'input');
